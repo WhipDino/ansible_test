@@ -4,7 +4,7 @@
   tasks:
     - name: Criar instância EC2
       amazon.aws.ec2_instance:
-        key_name: "open-environment-kp429-admin"  # Nome da sua chave SSH
+        key_name: "open-environment-kp429-admin"  # Substitua pelo nome da chave correta
         instance_type: "t2.micro"
         image_id: "ami-0c55b159cbfafe1f0"  # AMI para Amazon Linux
         region: "us-east-1"
