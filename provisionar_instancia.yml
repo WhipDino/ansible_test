@@ -3,13 +3,14 @@
   gather_facts: no
   tasks:
     - name: Criar instância EC2
-      ec2:
-        key_name: "nome_da_chave"
+      amazon.aws.ec2_instance:
+        key_name: "open-environment-kp429-admin"  # Nome da sua chave SSH
         instance_type: "t2.micro"
-        image: "ami-0c55b159cbfafe1f0"  # AMI para Amazon Linux
+        image_id: "ami-0c55b159cbfafe1f0"  # AMI para Amazon Linux
         region: "us-east-1"
         wait: yes
       register: ec2_instance_info
+
     - name: Mostrar informações da instância
       debug:
         var: ec2_instance_info
